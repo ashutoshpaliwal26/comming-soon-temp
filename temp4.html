@@ -1,0 +1,110 @@
+<html><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Countdown landing page Bootstrap template</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!-- Google fonts-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700">
+    <link rel="stylesheet" href="https://d19m59y37dris4.cloudfront.net/countdown/3-0/css/style.default.12db26d6.css" id="theme-stylesheet"><link id="new-stylesheet" rel="stylesheet">
+    <link rel="stylesheet" href="https://d19m59y37dris4.cloudfront.net/countdown/3-0/css/custom.0a822280.css">
+  </head>
+  <body>
+    <section class="page-holder position-relative d-flex justify-content-between flex-column" style="background: url('./bg2.jpg')">
+      <div class="overlay"></div>
+      <div class="container position-relative z-index-20 pt-3">
+        <ul class="list-inline text-center">
+          <li class="list-inline-item"><a class="social-link social-link-facebook" href="#"><i class="fab fa-facebook-f"></i></a></li>
+          <li class="list-inline-item"><a class="social-link social-link-twitter" href="#"><i class="fab fa-twitter"></i></a></li>
+          <li class="list-inline-item"><a class="social-link social-link-instagram" href="#"><i class="fab fa-instagram"></i></a></li>
+        </ul>
+      </div>
+      <div class="container text-center text-white position-relative mt-4 mb-5">
+        <h1 class="text-shadow mb-5 text-uppercase">Comming Soon</h1>
+        <p class="h3 text-shadow text-uppercase">Are You Ready</p>
+        <div class="countdown mt-5" id="countdown">
+          <div class="row">
+            <div class="countdown-item col-md-3 col-sm-6">
+              <div class="countdown-number fw-light text-shadow" data-days="" id="day">364</div>
+              <p class="h4 fw-light text-shadow">days</p>
+            </div>
+            <div class="countdown-item col-md-3 col-sm-6">
+              <div class="countdown-number fw-light text-shadow" data-hours="" id="hour">23</div>
+              <p class="h4 fw-light text-shadow">hours</p>
+            </div>
+            <div class="countdown-item col-md-3 col-sm-6">
+              <div class="countdown-number fw-light text-shadow" data-minutes="" id="min">59</div>
+              <p class="h4 fw-light text-shadow">minutes</p>
+            </div>
+            <div class="countdown-item col-md-3 col-sm-6">
+              <div class="countdown-number fw-light text-shadow" data-seconds="" id="sec">13</div>
+              <p class="h4 fw-light text-shadow">seconds</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container text-white text-center z-index-20">
+        <p class="h3 mb-4 text-shadow fw-normal">Join our mailing list and we will let you know all the news!</p>
+        <div class="row">
+          <div class="col-lg-5 mx-auto">
+            <form class="d-flex d-inline-block w-100 flex-column flex-lg-row justify-content-center">
+              <div class="input-group">
+                <input class="form-control" id="inlineFormInputName2" type="email" placeholder="JaneDoe@example.com">
+                <button class="btn btn-primary" type="submit">Subscribe</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <footer class="py-4 w-100 text-sm text-white z-index-20 position-relative">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-6 text-center text-sm-start">
+              <p>© 2024 Copyright</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </section>
+    <!-- JavaScript files-->
+
+    <script>
+        
+        const endDate = "17 July 2024 10:00 PM";
+
+        const dayCont = document.getElementById("day")
+        const minCont = document.getElementById("min")
+        const hourCont = document.getElementById("hour")
+        const secCont = document.getElementById("sec")
+
+        function clock(){
+            const end = new Date(endDate);
+            const now = new Date();
+            const diff = (end - now)/1000;
+
+            if(diff < 0) return;
+            
+            let day = Math.floor(diff/3600/24);
+            let hour = Math.floor(diff/3600)%24;
+            let min = Math.floor(diff/60) % 60;
+            let sec = Math.floor(diff) % 60;
+            dayCont.innerText = day;
+            hourCont.innerText = hour;
+            minCont.innerText = min;
+            secCont.innerText = sec;
+
+        }
+
+
+        clock();
+        
+        setInterval(()=>{
+            clock();
+        },1000)
+    </script>
+     
+    <script src="https://d19m59y37dris4.cloudfront.net/countdown/3-0/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://d19m59y37dris4.cloudfront.net/countdown/3-0/vendor/timezz/timezz.js"></script>
+  
+</body></html>
